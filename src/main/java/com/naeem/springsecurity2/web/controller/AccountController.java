@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AccountController {
 
-    @GetMapping("/notices")
+    @GetMapping("/myAccount")
     public String getNotices(){
-        return "Hera are the notices deatials from the DB";
+        return "Hera are the Account details from the DB";
     }
 }
