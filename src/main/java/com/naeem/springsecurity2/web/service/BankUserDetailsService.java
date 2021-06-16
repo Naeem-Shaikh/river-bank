@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class BankUserDetailsService implements UserDetailsService {
 
-@Autowired
+    @Autowired
     private CustomerRepository customerRepository;
 
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
