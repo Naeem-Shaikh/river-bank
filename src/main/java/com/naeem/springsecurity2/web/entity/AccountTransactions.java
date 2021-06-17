@@ -1,10 +1,13 @@
 package com.naeem.springsecurity2.web.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Table(name="account_transactions")
+@Data
 public class AccountTransactions {
 
     @Id

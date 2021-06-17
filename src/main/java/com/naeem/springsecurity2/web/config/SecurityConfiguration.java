@@ -34,7 +34,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 return config;
             }
         })
-                .and()
+                .and().csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/myAccount").authenticated()
                 .antMatchers("/myBalance").authenticated()
