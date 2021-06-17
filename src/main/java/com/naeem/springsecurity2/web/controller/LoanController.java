@@ -1,12 +1,27 @@
 package com.naeem.springsecurity2.web.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import com.naeem.springsecurity2.web.entity.Customer;
+import com.naeem.springsecurity2.web.entity.Loans;
+import com.naeem.springsecurity2.web.repository.LoanRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class LoanController {
-    @GetMapping("/myLoans")
-    public String getLoans(){
-        return "Here are Loan details from DB";
+
+    @Autowired
+    LoanRepository loanRepository;
+    @PostMapping ("/myLoans")
+    public List<Loans> getLoans(@RequestBody Customer customer){
+        List<Loans> loans =loanRepository.findByCustomerId(customer.getId());
+        if(loans==null){
+            return null;
+        }else{
+            return loans;
+        }
     }
 }
