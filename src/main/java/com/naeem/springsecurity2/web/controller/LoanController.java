@@ -12,16 +12,16 @@ import java.util.List;
 
 @RestController
 public class LoanController {
-
     @Autowired
-    LoanRepository loanRepository;
-    @PostMapping ("/myLoans")
-    public List<Loans> getLoans(@RequestBody Customer customer){
-        List<Loans> loans =loanRepository.findByCustomerId(customer.getId());
-        if(loans==null){
-            return null;
-        }else{
+    private LoanRepository loanRepository;
+
+    @PostMapping("/myLoans")
+    public List<Loans> getLoanDetails(@RequestBody Customer customer) {
+        List<Loans> loans = loanRepository.findByCustomerId(customer.getId());
+        if (loans != null ) {
             return loans;
+        }else {
+            return null;
         }
     }
 }

@@ -14,11 +14,13 @@ public class Loans {
     @Column(name="loan_number")
     private int loanId;
     private int customerId;
+    @Column(name="start_dt")
     private Date startDate;
     private String loanType;
     private int totalLoan;
     private int amountPaid;
-    private int outStandingAmount;
+    private int outstandingAmount;
+    @Column(name="create_dt")
     private String createdDate;
 
 }
